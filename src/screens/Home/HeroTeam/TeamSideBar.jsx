@@ -2,10 +2,11 @@ import { useSelector } from "react-redux";
 
 const TeamSideBar = () =>{
     const {intelligence,strength,combat,speed,durability,power} = useSelector((state)=>state.team.powerstats);
+
     return (
         <div>
             <ul>
-                <li>{intelligence}</li>
+                <li>Intelligence:{intelligence}</li>
                 <li>{strength}</li>
                 <li>{durability}</li>
                 <li>{power}</li>

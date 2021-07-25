@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Home from "../screens/Home/Home";
 import AddHero from "../screens/AddHero/AddHero";
+import HeroDetails from "../screens/HeroDetails/HeroDetails";
 function App() {
   return (
     <div className="App">
@@ -25,9 +26,13 @@ function App() {
             <Route path="/add-hero">
               <AddHero />
             </Route>
-            <Route path="/">
-              <Redirect to="/home" />
+            <Route path="/hero-details/:id">
+              <HeroDetails />
             </Route>
+            <Route path="/">
+              <Redirect to="/home" exact/>
+            </Route>
+
           </Switch> 
       </Router>
     </div>

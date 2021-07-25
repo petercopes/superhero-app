@@ -36,7 +36,7 @@ const teamSlice = createSlice({
     },
     deleteHero(state, action) {
         const heroToDelete = action.payload.hero;
-        state.heroesList.filter(hero=>hero.id!== heroToDelete.id);
+        state.heroesList = state.heroesList.filter(hero=>hero.id!== heroToDelete.id);
         state.averageHeight = (state.averageHeight-parseFloat(heroToDelete.appearance.height[1]))/state.heroesList.length;
         state.averageWeight = (state.averageWeight-parseFloat(heroToDelete.appearance.weight[1]))/state.heroesList.length;
         state.powerstats = {

@@ -6,11 +6,11 @@ import { useDispatch } from "react-redux";
 const schema = yup.object().shape({
   heroName: yup.string().required(),
 });
-
-const SearchHero = () => {
+const SearchHero = ({setShowHeroes}) => {
     const dispatch = useDispatch();
     const searchHandler = (values) =>{
-        dispatch(fetchHeroes(values.heroName))
+        dispatch(fetchHeroes(values.heroName));
+        setShowHeroes(true);
 
     }
   return (
