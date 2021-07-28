@@ -13,15 +13,17 @@ const HeroList = ({ heroes }) => {
     history.push("/hero-details/" + hero.id);
   };
 
-  return heroes.length > 0 ? (
-    <Container fluid>
+  return heroes.length > 0 && (
+    <Container className="heroList">
       <Row>
         {heroes.map((hero) => (
           <Col key={hero.id}>
             <HeroCard
               hero={hero}
               key={hero.id}
+              heroStats = {hero.powerstats}
               buttonText="Remove Hero"
+              itemStyle={{height:"130px","font-size":"12px","text-align": "left"}}
               buttons={[
                 {
                   function: () => deleteHeroHandler(hero),
@@ -34,8 +36,6 @@ const HeroList = ({ heroes }) => {
         ))}
       </Row>
     </Container>
-  ) : (
-    <p>No Heroes Found!</p>
-  );
+  )
 };
 export default HeroList;

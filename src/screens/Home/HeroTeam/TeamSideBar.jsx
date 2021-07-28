@@ -1,19 +1,12 @@
 import { useSelector } from "react-redux";
+import HeroStats from "../../../components/HeroCard/HeroStats";
 
 const TeamSideBar = () =>{
-    const {intelligence,strength,combat,speed,durability,power} = useSelector((state)=>state.team.powerstats);
+    const teamStats = useSelector((state)=>state.team.powerstats);
+    console.log(teamStats)
 
     return (
-        <div>
-            <ul>
-                <li>Intelligence:{intelligence}</li>
-                <li>{strength}</li>
-                <li>{durability}</li>
-                <li>{power}</li>
-                <li>{combat}</li>
-                <li>{speed}</li>
-            </ul>
-        </div>
+        <HeroStats stats={teamStats} style={{}} />
     )
 };
 export default TeamSideBar;

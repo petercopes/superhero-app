@@ -1,38 +1,51 @@
-.App {
+.link{
+  padding-right: 5px;
   text-align: center;
+  text-decoration: none;
+  color:white;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+height: 100vh;
+width: 100vw;
+background-color: rgb(44, 44, 44);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home{
+  justify-self: center;
   display: flex;
-  flex-direction: column;
+  height: 90%;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.glassCard{
+  height: 70vh;
+  width: 85vw;
+}
+.glassCard.card{
+  background-color: rgba(255, 255, 255, 0.445);
+}
+.glassCard .heroList{
+  height: 60vh;
+}
+.heroList,.foundHeroes{
+  padding: 25px;
+}
+.teamName{
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  border-bottom: 1px solid white;
+  color:white;
 }
 
-.App-link {
-  color: #61dafb;
+.heroCard{
+  margin:0px;
+  padding:2px;
+  max-width: 11rem;
+  max-height: 500px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ .sideBar .stats{
+  padding: 10px;
+}
+.heroCard .stats{
+  max-height: 100px;
 }

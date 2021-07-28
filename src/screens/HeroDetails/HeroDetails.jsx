@@ -1,12 +1,14 @@
-import {Container,Image} from 'react-bootstrap';
+import {CloseButton, Container,Image} from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 const HeroDetails = () =>{
     const {id} = useParams();
     const hero = useSelector((state)=> state.team.heroesList.find((hero)=>hero.id===id));
     
     return hero ? (
         <Container>
+            
+                <NavLink to="/home"><CloseButton/></NavLink>
             <h1>
                 {hero.name}
             </h1>
