@@ -40,7 +40,7 @@ const FoundHeroes = ({ heroes }) => {
 
   return (
     heroes.length > 0 && (
-      <Container fluid>
+     /*  {/* <Container fluid>
         <Row>
           {heroes.map((hero) => (
             <Col key={hero.id}>
@@ -54,7 +54,22 @@ const FoundHeroes = ({ heroes }) => {
             </Col>
           ))}
         </Row>
-      </Container>
+      </Container> } */
+      <Container className="heroList h-100 p-0">
+      <Row className="h-100 overflow-scroll p-0">
+        {heroes.map((hero) => (
+          <Col key={hero.id} xs={6} md={4} lg={3} className="p-2" >
+            <HeroCard
+              hero={hero}
+              key={hero.id}
+              buttons={[
+                { function: () => addHeroHandler(hero), text: "Add Hero" },
+              ]}
+            />
+          </Col>
+        ))}
+      </Row>
+    </Container>
     )
   );
 };

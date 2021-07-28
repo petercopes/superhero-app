@@ -14,16 +14,15 @@ const HeroList = ({ heroes }) => {
   };
 
   return heroes.length > 0 && (
-    <Container className="heroList">
-      <Row>
+    <Container className="heroList h-100 p-0">
+      <Row className="h-100 overflow-scroll p-0">
         {heroes.map((hero) => (
-          <Col key={hero.id}>
+          <Col key={hero.id} xs={10} md={6} lg={4} className="p-1">
             <HeroCard
               hero={hero}
               key={hero.id}
               heroStats = {hero.powerstats}
               buttonText="Remove Hero"
-              itemStyle={{height:"130px","font-size":"12px","text-align": "left"}}
               buttons={[
                 {
                   function: () => deleteHeroHandler(hero),

@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      <Card className="glassCard">
+      <Card className="glassCard border-0 m-4 p-0">
         
         <HeroTeam heroes={heroes} />
       </Card>

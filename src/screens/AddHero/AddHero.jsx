@@ -1,8 +1,8 @@
 import FoundHeroes from "./FoundHeroes";
 import { useDispatch, useSelector } from "react-redux";
 import SearchHero from "./SearchHero";
-import { Alert } from "react-bootstrap";
-
+import { Alert, Button, CloseButton, Modal } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { setHeroAddStatus, setSearchStatus } from "../../store/actions";
 
 const AddHero = () => {
@@ -19,14 +19,21 @@ const AddHero = () => {
     dispatch(setSearchStatus({status:"initial"}));
   }
   return (
-    <>
+    <div className="h-100">
       <SearchHero />
       {searchStatus === "success" && (
         <div className='foundHeroes'>
           <FoundHeroes heroes={heroes} />
         </div>
       )}
+      <Modal show={addHeroStatus.status!== "initial"} centered onHide={closeHeroStatusAlertHandler}>
+      <Modal.Header closeButton> 
+          <Modal.Title>{addHeroStatus.message}</Modal.Title>
+
+        </Modal.Header>
+      </Modal>
       {searchStatus === "failed" && (
+        
         <Alert
           show={searchStatus === "failed"}
           variant="danger"
@@ -38,18 +45,7 @@ const AddHero = () => {
           </Alert.Heading>
         </Alert>
       )}
-      {addHeroStatus.status!== "initial" && (<Alert
-          show={addHeroStatus.status !== "initial"}
-          variant={addHeroStatus.status==="success"?('success'):("danger")}
-          onClose={closeHeroStatusAlertHandler}
-          dismissible
-        >
-          <Alert.Heading>
-            {addHeroStatus.message}
-          </Alert.Heading>
-        </Alert>)
-        }
-    </>
+    </div>
   );
 };
 export default AddHero;

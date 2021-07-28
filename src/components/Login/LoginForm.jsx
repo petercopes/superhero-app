@@ -35,9 +35,9 @@ const LoginForm = () => {
         errors,
         touched,
       }) => (
-        <Container>
+        <Container className="container p-2 h-100 w-100">
           <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formGroupEmail">
+            <Form.Group className="mb-1 " controlId="formGroupEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 type="email"
@@ -50,7 +50,7 @@ const LoginForm = () => {
               />
               {errors.email && <ErrorMessage name="password" />}
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formGroupPassword">
+            <Form.Group className="mb-1 " controlId="formGroupPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
@@ -66,16 +66,16 @@ const LoginForm = () => {
             {requestStatus === "failed" && (
             <p>Invalid Email - Password combination. Please try again!</p>
           )}
-            <Button variant="dark" type="submit" disabled={!isValid}>
+            <Button variant="dark" type="submit" className="mt-1" disabled={!isValid}>
               {requestStatus === "pending" ? (
                 <Spinner
                   as="span"
-                  animation="grow"
+                  animation="border"
                   size="sm"
                   role="status"
                   aria-hidden="true"
                 />
-              ): <p>Log in</p>}             
+              ): <p className="m-0">Log in</p>}             
             </Button>
           </Form>
         </Container>

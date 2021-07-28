@@ -1,7 +1,7 @@
 const HeroStats = ({ stats }, { itemStyle }) => {
   return (
     <div className="stats">
-    <h2 className="h6">Stats</h2>
+    <h2 className="h6 p-1 m-0 text-center">Stats</h2>
       <div className="stats overflow-scroll">
         <p className="m-1 ">Combat: {stats.combat}</p>
         <p className="m-1">Durability: {stats.durability}</p>

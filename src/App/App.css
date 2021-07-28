@@ -12,7 +12,7 @@ background-color: rgb(44, 44, 44);
 .home{
   justify-self: center;
   display: flex;
-  height: 90%;
+
   align-items: center;
   justify-content: center;
 }
@@ -30,22 +30,29 @@ background-color: rgb(44, 44, 44);
   padding: 25px;
 }
 .teamName{
+  font-size: 20px;
   text-align: center;
   margin: 0;
   padding: 5px;
   border-bottom: 1px solid white;
   color:white;
 }
-
+.roundedLeft{
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem;
+}
 .heroCard{
   margin:0px;
   padding:2px;
-  max-width: 11rem;
-  max-height: 500px;
+  
 }
  .sideBar .stats{
-  padding: 10px;
+  padding: 2px;
+  font-size: 12px;
 }
 .heroCard .stats{
   max-height: 100px;
+}
+.loginModal{
+  background-color: #ffffff75;
 }

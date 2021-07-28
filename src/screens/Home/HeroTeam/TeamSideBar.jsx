@@ -6,7 +6,7 @@ const TeamSideBar = () =>{
     console.log(teamStats)
 
     return (
-        <HeroStats stats={teamStats} style={{}} />
+        <HeroStats stats={teamStats}  />
     )
 };
 export default TeamSideBar;

@@ -30,8 +30,8 @@ const SearchHero = () => {
       {({ handleSubmit, handleChange, values, isValid, errors, touched }) => (
         <Container >
           <Form onSubmit={handleSubmit}>
-            <Row>
-              <Col xs={10}>
+            <Row className="m-5">
+              <Col xs={9} md={10} className="p-0">
                 <Form.Control
                   type="text"
                   placeholder="Enter the Hero's name"
@@ -41,17 +41,17 @@ const SearchHero = () => {
                   isValid={!errors.heroName}
                 />
               </Col>
-              <Col xs={2}>
-                <Button variant="dark" type="submit" disabled={!isValid}>
+              <Col xs={3} md={2} >
+                <Button variant="dark" type="submit"className="border border-white" disabled={!isValid}>
                 {requestStatus === "pending" ? (
                 <Spinner
                   as="span"
-                  animation="grow"
+                  animation="border"
                   size="sm"
                   role="status"
                   aria-hidden="true"
                 />
-              ): <p>Search</p>}        
+              ): <p className="m-0">Search</p>}        
                 </Button>
               </Col>
             </Row>

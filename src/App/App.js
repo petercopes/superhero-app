@@ -13,7 +13,9 @@ function App() {
       <Login />
       <header className="mb-2">
         <Navbar collapseOnSelect expand="xxl" bg="dark" variant="dark">
-          <Navbar.Brand className="m-2">Hero Team App</Navbar.Brand>
+          <Navbar.Brand className="m-2"><NavLink to="/home" className="link">
+                Hero Team App
+              </NavLink></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" className="m-2"/>
           <Navbar.Collapse id="responsive-navbar-nav" >
             <Nav className="me-auto">
