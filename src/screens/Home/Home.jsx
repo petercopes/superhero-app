@@ -1,17 +1,13 @@
 import { Card } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import { clearSearch } from "../../store/actions";
 import HeroTeam from "./HeroTeam/HeroTeam";
-import styles from "./Home.module.css";
 
 const Home = () => {
-  /* const dispatch = useDispatch();
 
-     useEffect(()=>{
-        dispatch(fetchHeroes());
-    },[dispatch]);  */
   const heroes = useSelector((state) => state.team.heroesList);
-  const teamName = useSelector((state) => state.team.teamName);
-
+  const dispatch = useDispatch();
+  
   return (
     <div className="home">
       <Card className="glassCard border-0 m-4 p-0">

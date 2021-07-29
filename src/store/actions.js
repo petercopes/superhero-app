@@ -35,7 +35,12 @@ export const fetchHeroes = (payload) => {
     }
   };
 };
+export const clearSearch = () =>{
+  return (dispatch)=>{
+    dispatch(HeroesActions.setHeroes({heroes:[]}));
+  }
 
+}
 export const logIn = (payload) => {
   const url = "http://challenge-react.alkemy.org";
   return async(dispatch) => {

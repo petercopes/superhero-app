@@ -8,29 +8,39 @@
 height: 100vh;
 width: 100vw;
 background-color: rgb(44, 44, 44);
+
 }
+
 .home{
   justify-self: center;
   display: flex;
-
+  height: 80vh;
   align-items: center;
   justify-content: center;
 }
 .glassCard{
   height: 70vh;
   width: 85vw;
+
 }
 .glassCard.card{
-  background-color: rgba(255, 255, 255, 0.445);
+  background-color: rgba(12, 12, 12, 0.809);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+
 }
+
 .glassCard .heroList{
   height: 60vh;
+  
+
 }
-.heroList,.foundHeroes{
-  padding: 25px;
+.heroList{
+  height: 70vh;
+
 }
+
 .teamName{
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
   margin: 0;
   padding: 5px;
@@ -44,15 +54,38 @@ background-color: rgb(44, 44, 44);
 .heroCard{
   margin:0px;
   padding:2px;
-  
+
+
 }
- .sideBar .stats{
-  padding: 2px;
+.heroCard img {
+  max-height: 250px;
+}
+.stats{
   font-size: 12px;
+}
+.sideBar .stats{
+  padding: 2px;
+  
 }
 .heroCard .stats{
   max-height: 100px;
 }
 .loginModal{
   background-color: #ffffff75;
+}
+header *{
+  z-index: 2;
+}
+.mainImage{
+  position: absolute;
+  bottom: 0;
+  height: 95%;
+  width: 100%;
+  z-index: 0;
+}
+.heroDetails p{
+  font-size: 12px;
+}
+.heroDetails h2{
+  font-size: 15px;
 }

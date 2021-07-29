@@ -1,14 +1,12 @@
-const HeroStats = ({ stats }, { itemStyle }) => {
+const HeroStats = ({ stats }) => {
+  
   return (
-    <div className="stats">
-    <h2 className="h6 p-1 m-0 text-center">Stats</h2>
+    <div>
+    <h2 className="h6 p-1 m-0">Stats</h2>
       <div className="stats overflow-scroll">
-        <p className="m-1 ">Combat: {stats.combat}</p>
-        <p className="m-1">Durability: {stats.durability}</p>
-        <p className="m-1">Intelligence: {stats.intelligence}</p>
-        <p className="m-1">Power: {stats.power}</p>
-        <p className="m-1">Speed: {stats.speed}</p>
-        <p className="m-1">Strength: {stats.strength}</p>
+        {
+          stats.map(stat=> <p key={stat.name} className="m-1">{stat.name}: {stat.value}</p> )
+        }
       </div>
     </div>
   );
