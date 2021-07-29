@@ -1,7 +1,7 @@
 import { Col, Container, Image, Modal, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import LoginForm from "./LoginForm";
-import loginHeroes from "./loginHeros.jpeg";
+import loginHeroes from "../../assets/loginHeros.jpeg"
 
 const Login = () => {
   const isLogged = useSelector((state) => state.login.loggedIn);

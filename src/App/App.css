@@ -18,10 +18,11 @@ background-color: rgb(44, 44, 44);
   align-items: center;
   justify-content: center;
 }
-.glassCard{
-  height: 70vh;
-  width: 85vw;
 
+.glassCard{
+  background-color: rgba(165, 165, 165, 0.555);
+  width: 70vw;
+    height: 60vh;
 }
 .glassCard.card{
   background-color: rgba(12, 12, 12, 0.809);

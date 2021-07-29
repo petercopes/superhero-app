@@ -6,13 +6,13 @@ import AddHero from "../screens/AddHero/AddHero";
 import HeroDetails from "../screens/HeroDetails/HeroDetails";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "../components/Login/Login";
-import heroesLogo from "./heroes.png";
+
 import NavBar from "../components/NavBar/NavBar";
-import { Image } from "react-bootstrap";
+
 function App() {
   return (
     <>
-      <div className="App">
+      <div className="App overflow-hidden">
         <Login />
         <NavBar />
         <Switch>

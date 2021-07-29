@@ -2,22 +2,15 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import HeroCard from "../../components/HeroCard/HeroCard";
 import { addHero, setHeroAddStatus } from "../../store/actions";
+import { HeroOrientationAvailability } from "../../utils/utils";
 
 const FoundHeroes = ({ heroes }) => {
   const dispatch = useDispatch();
   const teamHeroes = useSelector((state) => state.team.heroesList);
-  const HeroOrientationAvailability = (hero) => {
-    let sameOrientationHeroes = 0;
-
-    for (const teamHero of teamHeroes) {
-      if (hero.biography.alignment === teamHero.biography.alignment)
-        sameOrientationHeroes++;
-    }
-    return sameOrientationHeroes < 3;
-  };
+  
   const addHeroHandler = (hero) => {
     if (!teamHeroes.some((currentHero) => currentHero.id === hero.id)) {
-      const orientationAvailable = HeroOrientationAvailability(hero);
+      const orientationAvailable = HeroOrientationAvailability(hero,teamHeroes);
 
       if (orientationAvailable && teamHeroes.length < 6) {
         dispatch(addHero(hero));

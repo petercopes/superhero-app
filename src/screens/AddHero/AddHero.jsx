@@ -5,13 +5,12 @@ import { Alert, Modal } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { setHeroAddStatus, setSearchStatus } from "../../store/actions";
 
+
 const AddHero = () => {
   const dispatch = useDispatch();
   const heroes = useSelector((state) => state.heroes.heroesList);
   const searchStatus = useSelector((state) => state.ui.searchStatus);
   const addHeroStatus = useSelector((state) => state.ui.heroAddStatus);
-  console.log(searchStatus)
-  console.log(addHeroStatus);
   const closeHeroStatusAlertHandler = ()=>{
     dispatch(setHeroAddStatus({status:"initial",message:""}));
   }
@@ -26,12 +25,13 @@ const AddHero = () => {
           <FoundHeroes heroes={heroes} />
         
       )}
+      
       <Modal show={addHeroStatus.status!== "initial"} centered onHide={closeHeroStatusAlertHandler}>
       <Modal.Header closeButton> 
           <Modal.Title>{addHeroStatus.message}</Modal.Title>
 
         </Modal.Header>
-      </Modal>
+      </Modal>   
       {searchStatus === "failed" && (
         
         <Alert

@@ -35,7 +35,7 @@ const SearchHero = () => {
       {({ handleSubmit, handleChange, values, isValid, errors, touched }) => (
         <Container >
           <Form onSubmit={handleSubmit}>
-            <Row className="m-0">
+            <Row className="m-5">
               <Col xs={9} md={10} className="p-0">
                 <Form.Control
                   type="text"

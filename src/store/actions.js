@@ -50,7 +50,6 @@ export const logIn = (payload) => {
         email: payload.email,
         password: payload.password
       }
-      console.log(data);
       const response = await Axios.post(url, data);
       if (!response.status === 201|| !response.status === 200) {
         throw new Error("Could not fetch data!");
