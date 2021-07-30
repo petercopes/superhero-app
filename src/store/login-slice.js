@@ -3,7 +3,7 @@ import {createSlice} from '@reduxjs/toolkit';
 const LoginSlice = createSlice({
   name: 'login',
   initialState: {
-    loggedIn:false,
+    loggedIn: window.localStorage.getItem("token")? true:false,
     error: null
   },
   reducers: {

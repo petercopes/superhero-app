@@ -92,4 +92,9 @@ export const setSearchStatus = (payload) =>{
 
 }
 
-
+export const logOut = (payload) =>{
+  return (dispatch) =>{
+    window.localStorage.removeItem("token");
+    dispatch(LoginActions.setLogged({isLogged:false,errors:null}));
+  }
+}
