@@ -14,7 +14,7 @@ const SearchHero = () => {
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(clearSearch());
-  },[])
+  },[dispatch])
   const searchHandler = (values) => {
     dispatch(fetchHeroes(values.heroName));
 
